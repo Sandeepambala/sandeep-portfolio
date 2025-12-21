@@ -7,8 +7,6 @@ import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import CursorFollower from "@/components/CursorFollower";
-import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 
 const Index = () => {
   return (
@@ -29,28 +27,15 @@ const Index = () => {
         <link rel="canonical" href="https://sandeepambala.dev" />
       </Helmet>
       
-      {/* Custom cursor */}
-      <CursorFollower />
-      
-      <div className="min-h-screen bg-background text-foreground cursor-none">
+      <div className="min-h-screen bg-background text-foreground">
         <Navigation />
         <main>
           <Hero />
-          <ScrollAnimationWrapper>
-            <About />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper delay={0.1}>
-            <Projects />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper delay={0.1}>
-            <Experience />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper delay={0.1}>
-            <TechStack />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper delay={0.1}>
-            <Contact />
-          </ScrollAnimationWrapper>
+          <About />
+          <Projects />
+          <Experience />
+          <TechStack />
+          <Contact />
         </main>
         <Footer />
       </div>
