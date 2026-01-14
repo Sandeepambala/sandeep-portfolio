@@ -1,35 +1,55 @@
-import { ArrowUpRight, Mic, Share2, MessageSquare, Users } from "lucide-react";
+import { ArrowUpRight, Mic, Share2, Users, GraduationCap, Mail, Cpu, Search, Bot } from "lucide-react";
 
 const projects = [
   {
-    icon: Mic,
-    title: "GTM Monitoring System",
-    subtitle: "AI-Powered Sales Call Intelligence",
+    icon: GraduationCap,
+    title: "Shanthipath Yoga Learning Platform",
+    subtitle: "End-to-End Online Learning & Booking System",
     description:
-      "Built a custom ERPNext module where agents receive leads and initiate calls directly from the system. Integrated laptop microphone for real-time recording with automatic categorization. AI feedback pipeline processes recordings and generates conversational insights delivered instantly to agents and managers.",
-    impact: "Improved decision-making and faster feedback loops across sales teams",
-    technologies: ["ERPNext", "n8n", "AI/LLM", "Voice Processing"],
-    accent: "from-emerald-500 to-teal-500",
+      "Built a complete yoga education platform with 24/7 live Zoom class integration and automated link handling. Customized Frappe LMS with retreat booking, secure payment processing, and cloud recording embeds — eliminating server storage overhead while providing seamless user access.",
+    impact: "Enabled scalable online yoga education with zero manual intervention",
+    technologies: ["React.js", "Frappe LMS", "Python", "Zoom API", "Payment Gateway"],
+    accent: "from-primary to-accent",
+  },
+  {
+    icon: Mic,
+    title: "GTM Monitoring & Cold Call System",
+    subtitle: "AI-Powered Lead Research & Script Generation",
+    description:
+      "Automated the entire cold calling workflow — leads flow from research team to callers with AI-generated scripts powered by Perplexity LLM. Real-time call recording with automatic categorization delivers instant insights to agents and managers.",
+    impact: "Reduced call prep time by 70% and improved pitch quality across sales teams",
+    technologies: ["ERPNext", "Perplexity API", "n8n", "Voice Processing", "AI/LLM"],
+    accent: "from-primary to-accent",
   },
   {
     icon: Share2,
     title: "AI Social Media Manager",
-    subtitle: "Frappe + LangChain + RAG",
+    subtitle: "ERP-Integrated Content Automation",
     description:
-      "End-to-end automation of content creation, scheduling, and engagement across LinkedIn, X/Twitter, and Reddit. Implemented RAG pipeline with company knowledge base for brand-consistent content. Built AI agents for content generation, auto-scheduling, and intelligent commenting.",
-    impact: "Automated multi-platform social presence with on-brand messaging",
-    technologies: ["Frappe", "LangChain", "OpenAI", "RAG"],
-    accent: "from-blue-500 to-cyan-500",
+      "Direct publishing from ERP to Twitter, LinkedIn, and Reddit with AI-generated content and images. Uses company knowledge base as context for brand-consistent messaging. Automated scheduling handles multi-platform presence without manual effort.",
+    impact: "Eliminated hours of weekly content creation and scheduling work",
+    technologies: ["Frappe", "LangChain", "OpenAI", "RAG", "Social APIs"],
+    accent: "from-primary to-accent",
   },
   {
-    icon: MessageSquare,
-    title: "Telegram Sales Approval",
-    subtitle: "Real-time ERPNext Integration",
+    icon: Cpu,
+    title: "ERPNext + LangChain Integration",
+    subtitle: "AI-Powered Task Execution Inside ERP",
     description:
-      "Integrated ERPNext with Telegram using Bot APIs and n8n for real-time workflow automation. Auto-generates detailed order summaries sent to approvers with inline Approve/Reject buttons. Bidirectional sync updates document workflow automatically.",
-    impact: "Eliminated approval delays and accelerated order processing cycles",
-    technologies: ["ERPNext", "Telegram API", "n8n", "Webhooks"],
-    accent: "from-violet-500 to-purple-500",
+      "Deep integration of LangChain within ERPNext server for intelligent automation. Capabilities include image generation, content creation, automated follow-up emails, and lead research via Perplexity — all with prompts and API keys managed securely inside ERP.",
+    impact: "Brought AI capabilities directly into business workflows without external tools",
+    technologies: ["ERPNext", "LangChain", "Perplexity", "Python", "AI Agents"],
+    accent: "from-primary to-accent",
+  },
+  {
+    icon: Mail,
+    title: "Email Classification & SEO Automation",
+    subtitle: "Intelligent Email Processing & Content Generation",
+    description:
+      "Automated email classification with custom rules per client. Enquiry emails auto-create opportunities in ERP and notify relevant team members. Integrated SEO content and FAQ generation with intelligent web scraping for blogs, webpages, and product descriptions.",
+    impact: "Zero missed leads and consistent SEO content without manual research",
+    technologies: ["ERPNext", "AI Classification", "Web Scraping", "SEO Tools", "n8n"],
+    accent: "from-primary to-accent",
   },
   {
     icon: Users,
@@ -39,7 +59,7 @@ const projects = [
       "Streamlined vendor registration with OTP-based email authentication, dynamic form rendering based on vendor class, real-time application status tracking, and stage-wise permission controls. Built using Frappe Framework with custom doctypes.",
     impact: "Improved onboarding transparency and reduced communication overhead",
     technologies: ["Frappe", "Python", "Custom Doctypes", "Web Pages"],
-    accent: "from-orange-500 to-amber-500",
+    accent: "from-primary to-accent",
   },
 ];
 
@@ -49,15 +69,15 @@ const Projects = () => {
       <div className="container-tight">
         {/* Section header */}
         <div className="mb-16">
-          <p className="text-sm font-mono text-primary mb-3">// PROJECTS</p>
+          <p className="text-sm font-mono text-primary mb-3">// AUTOMATION PROJECTS</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6">
-            Systems that solve
+            Systems that eliminate
             <br />
-            <span className="text-gradient">real problems</span>
+            <span className="text-gradient">manual work</span>
           </h2>
           <p className="max-w-2xl text-muted-foreground text-lg">
-            Not just features — these are complete solutions that eliminate manual work, 
-            streamline processes, and let businesses focus on growth.
+            Not just features — complete business automation solutions that streamline operations, 
+            reduce errors, and let teams focus on growth instead of repetitive tasks.
           </p>
         </div>
 
@@ -71,10 +91,8 @@ const Projects = () => {
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 {/* Icon */}
                 <div className="shrink-0">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br opacity-90 flex items-center justify-center text-foreground" style={{ backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))` }}>
-                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${project.accent} flex items-center justify-center`}>
-                      <project.icon className="w-7 h-7 text-foreground" />
-                    </div>
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                    <project.icon className="w-7 h-7 text-primary-foreground" />
                   </div>
                 </div>
 

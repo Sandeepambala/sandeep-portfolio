@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Spotlight effect */}
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="hsl(142 76% 36%)"
+        fill="hsl(142 71% 45%)"
       />
 
       {/* Background gradient */}
@@ -26,18 +26,23 @@ const Hero = () => {
             {/* Status badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-8 w-fit animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-              <span className="text-sm text-muted-foreground">Available for opportunities</span>
+              <span className="text-sm text-muted-foreground">Available for Consulting & Projects</span>
             </div>
 
             {/* Main heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              <span className="block text-foreground">Sandeep Ambala</span>
-              <span className="block text-gradient mt-2">AI & Automation Engineer</span>
+              <span className="block text-foreground">From Manual Chaos</span>
+              <span className="block text-gradient mt-2">To Automated Systems</span>
             </h1>
 
             {/* Subheading */}
-            <p className="max-w-xl text-lg md:text-xl text-muted-foreground mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              I build intelligent systems that eliminate manual work. From custom ERP solutions to AI-powered automation workflows — turning complex business requirements into clean, scalable solutions.
+            <p className="max-w-xl text-lg md:text-xl text-muted-foreground mb-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              I help growing businesses eliminate manual work and scale operations through intelligent automation, AI workflows, and custom ERP solutions.
+            </p>
+
+            {/* Positioning tagline */}
+            <p className="text-primary font-medium mb-10 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+              Business Automation Specialist | ERPNext & AI Integration Expert
             </p>
 
             {/* CTA buttons */}
@@ -46,14 +51,14 @@ const Hero = () => {
                 href="#projects"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5"
               >
-                View My Work
+                See How I Automate
                 <ArrowDown className="w-4 h-4" />
               </a>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-border bg-card/50 backdrop-blur-sm text-foreground font-medium rounded-lg transition-all duration-300 hover:border-primary/50 hover:bg-card"
               >
-                Get In Touch
+                Let's Talk Automation
               </a>
             </div>
 
