@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -12,21 +13,21 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Sandeep Ambala | AI & Automation Engineer</title>
-        <meta 
-          name="description" 
-          content="AI/Automation specialist and ERP solution engineer. Building intelligent workflows, custom ERP modules, and AI-powered tools using Frappe Framework and n8n." 
+        <title>Sandeep Ambala | Business Automation Specialist – AI, ERPNext & Workflow Automation</title>
+        <meta
+          name="description"
+          content="Business automation specialist helping companies eliminate manual work with AI agents, ERPNext solutions, and workflow automation using Frappe, LangChain, and n8n."
         />
-        <meta name="keywords" content="AI automation, ERP developer, ERPNext, Frappe Framework, n8n, workflow automation, AI engineer, Python developer" />
-        <meta property="og:title" content="Sandeep Ambala | AI & Automation Engineer" />
-        <meta property="og:description" content="Building intelligent systems that eliminate manual work. From custom ERP solutions to AI-powered automation workflows." />
+        <meta name="keywords" content="AI automation, business automation, ERPNext developer, Frappe Framework, n8n workflow automation, AI agents, LangChain, automation consulting, ERP solutions, Python developer" />
+        <meta property="og:title" content="Sandeep Ambala | Business Automation Specialist" />
+        <meta property="og:description" content="From manual chaos to automated systems. AI workflows, ERPNext solutions, and business automation." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Sandeep Ambala | AI & Automation Engineer" />
-        <meta name="twitter:description" content="Building intelligent systems that eliminate manual work." />
-        <link rel="canonical" href="https://sandeepambala.dev" />
+        <meta name="twitter:title" content="Sandeep Ambala | Business Automation Specialist" />
+        <meta name="twitter:description" content="Helping businesses eliminate manual work with AI & automation." />
+        <link rel="canonical" href="https://sandeepambala.lovable.app" />
       </Helmet>
-      
+
       <div className="min-h-screen bg-background text-foreground">
         <Navigation />
         <main>
@@ -35,6 +36,7 @@ const Index = () => {
           <Projects />
           <Experience />
           <TechStack />
+          <Certifications />
           <Contact />
         </main>
         <Footer />
