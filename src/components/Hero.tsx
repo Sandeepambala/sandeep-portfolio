@@ -79,7 +79,7 @@ const Hero = () => {
             <div className="w-72 h-72 xl:w-80 xl:h-80 rounded-2xl border-2 border-primary/30 overflow-hidden bg-card/50 backdrop-blur-sm glow">
               {/* Replace src with your actual photo */}
               <img
-                src="/placeholder.svg"
+                src="sandeepambala.png"
                 alt="Sandeep Ambala - Business Automation Specialist"
                 className="w-full h-full object-cover"
                 loading="eager"
