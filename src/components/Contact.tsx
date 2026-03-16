@@ -1,22 +1,9 @@
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Mail, Linkedin, Phone, MapPin, ArrowUpRight, Send, CheckCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", service: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Open mailto with form data
-    const subject = encodeURIComponent(`Project Inquiry: ${formData.service || "Business Automation"}`);
-    const body = encodeURIComponent(
-      `Hi Sandeep,\n\nName: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
-    );
-    window.open(`mailto:sandeepambala31@gmail.com?subject=${subject}&body=${body}`, "_self");
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-  };
+  const [state, handleSubmit] = useForm("xyknnjqo");
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
@@ -53,42 +40,44 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-mono text-primary mb-2">
+                    <label htmlFor="name" className="block text-sm font-mono text-primary mb-2">
                       <span className="text-muted-foreground">$</span> your_name
                     </label>
                     <input
+                      id="name"
+                      name="name"
                       type="text"
                       required
                       maxLength={100}
                       placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
                     />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} className="text-destructive text-xs mt-1 font-mono" />
                   </div>
                   <div>
-                    <label className="block text-sm font-mono text-primary mb-2">
+                    <label htmlFor="email" className="block text-sm font-mono text-primary mb-2">
                       <span className="text-muted-foreground">$</span> email
                     </label>
                     <input
+                      id="email"
+                      name="email"
                       type="email"
                       required
                       maxLength={255}
                       placeholder="john@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
                     />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-destructive text-xs mt-1 font-mono" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-mono text-primary mb-2">
+                  <label htmlFor="service" className="block text-sm font-mono text-primary mb-2">
                     <span className="text-muted-foreground">$</span> service_needed
                   </label>
                   <select
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    id="service"
+                    name="service"
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
                   >
                     <option value="">Select a service...</option>
@@ -99,28 +88,31 @@ const Contact = () => {
                     <option value="API Integration">API & System Integration</option>
                     <option value="Consulting">General Consulting</option>
                   </select>
+                  <ValidationError prefix="Service" field="service" errors={state.errors} className="text-destructive text-xs mt-1 font-mono" />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-mono text-primary mb-2">
+                  <label htmlFor="message" className="block text-sm font-mono text-primary mb-2">
                     <span className="text-muted-foreground">$</span> message
                   </label>
                   <textarea
+                    id="message"
+                    name="message"
                     required
                     maxLength={1000}
                     rows={4}
                     placeholder="Tell me about your project, challenges, and goals..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all resize-none"
                   />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-destructive text-xs mt-1 font-mono" />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0"
+                  disabled={state.submitting}
+                  className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {submitted ? (
+                  {state.succeeded ? (
                     <>
                       <CheckCircle className="w-5 h-5" />
                       Message Sent!
@@ -128,7 +120,7 @@ const Contact = () => {
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Send Message
+                      {state.submitting ? "Sending..." : "Send Message"}
                     </>
                   )}
                 </button>
