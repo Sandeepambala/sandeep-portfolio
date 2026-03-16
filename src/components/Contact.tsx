@@ -72,23 +72,19 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-mono text-primary mb-2">
-                    <span className="text-muted-foreground">$</span> service_needed
+                  <label htmlFor="phone" className="block text-sm font-mono text-primary mb-2">
+                    <span className="text-muted-foreground">$</span> phone_number
                   </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="AI Automation">AI Automation & Agents</option>
-                    <option value="ERPNext Implementation">ERPNext Implementation</option>
-                    <option value="Workflow Automation">Workflow Automation (n8n)</option>
-                    <option value="Custom Frappe App">Custom Frappe Application</option>
-                    <option value="API Integration">API & System Integration</option>
-                    <option value="Consulting">General Consulting</option>
-                  </select>
-                  <ValidationError prefix="Service" field="service" errors={state.errors} className="text-destructive text-xs mt-1 font-mono" />
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    maxLength={20}
+                    placeholder="+91 9515187680"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
+                  />
+                  <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-destructive text-xs mt-1 font-mono" />
                 </div>
 
                 <div>
